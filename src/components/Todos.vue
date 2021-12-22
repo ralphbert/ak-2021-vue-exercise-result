@@ -11,7 +11,7 @@
     </div>
 
     <div>
-      {{ loading ? 'Loading...' : '' }}
+      <LoadingIndicator v-if="loading">Loading...</LoadingIndicator>
       <ul class="list-group">
         <li class="list-group-item" v-for="todo in todos" :key="todo.id">
           {{ todo.title }}
@@ -23,8 +23,10 @@
 
 <script>
 import axios from 'axios';
+import LoadingIndicator from "./LoadingIndicator";
 
 export default {
+  components: {LoadingIndicator},
   data() {
     return {
       todos: [],

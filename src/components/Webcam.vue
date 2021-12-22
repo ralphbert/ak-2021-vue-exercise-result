@@ -6,12 +6,7 @@
       <button v-if="!stream && !loading" class="btn btn-primary" @click="startCamera">Activate camera</button>
       <button v-if="stream && !loading" class="btn btn-danger" @click="stopCamera">Stop camera</button>
 
-      <div class="row align-items-center" v-if="loading">
-        <div class="col-auto">
-          <Spinner></Spinner>
-        </div>
-        <div class="col">Initializing...</div>
-      </div>
+      <LoadingIndicator v-if="loading">Initializing...</LoadingIndicator>
     </div>
 
     <div class="bg-light">
@@ -27,12 +22,12 @@
 </template>
 
 <script>
-import Spinner from "./Spinner";
+import LoadingIndicator from "./LoadingIndicator";
 
 export default {
   name: "Webcam",
   components: {
-    Spinner,
+    LoadingIndicator,
   },
   data() {
     return {
