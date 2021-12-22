@@ -3,7 +3,10 @@
     <div class="col-auto">
       <Spinner></Spinner>
     </div>
-    <div class="col"><slot></slot></div>
+    <div class="col">
+      <!-- using the slot-tag to project the content between the tags to this position -->
+      <slot></slot>
+    </div>
   </div>
 </template>
 

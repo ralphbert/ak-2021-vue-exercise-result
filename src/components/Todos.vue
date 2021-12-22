@@ -47,6 +47,7 @@ export default {
           .catch(error => {
             this.error = error;
           })
+          // finally will be called every time when a promise settles
           .finally(() => {
             this.loading = false;
           });
